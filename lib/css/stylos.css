@@ -1,0 +1,22 @@
+.container{
+    margin-top: 50px;
+}
+
+textarea{
+    min-height: 100px;
+    max-width: 100%;
+    max-height: 100px;
+}
+
+.btn{
+    text-align: center;
+    cursor: pointer;
+}
+
+thead,tbody{
+    text-align: center;
+}
+
+#dataTable{
+    padding-top: 10px;
+}

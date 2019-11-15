@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lib/css/stylos.css">
+    <link rel="stylesheet" href="lib/bootstrap-4.3.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="lib/fontawesome-free-5.8.1-web/css/all.css">
+    <link rel="stylesheet" href="lib/alertifyjs/css/alertify.css">
+    <link rel="stylesheet" href="lib/alertifyjs/css/themes/default.css">
+    <script src="lib/jquery-3.3.1.min.js"></script>
+    <script src="lib/bootstrap-4.3.1-dist/js/bootstrap.js"></script>
+    <script src="lib/alertifyjs/alertify.js"></script>
+    <script src="js/crud.js"></script>
+    <script src="js/deb.js"></script>
+    <title>Riviera inc.</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card bg-light mb-3">
+                    <div class="card-header">
+                        <i class="fas fa-lock"></i><strong>La riviera</strong>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-center y-2">CRUD</h5>
+                        <div class="btn btn-primary" data-toggle="modal" data-target="#ModalNuevo">
+                            <i class="fas fa-plus-circle"></i> Nuevo producto
+                        </div>
+                        <div id="dataTable">
+
+                        </div>
+                    </div>
+                    <div class="card-footer text-muted text-right">
+                        <p>La riviera inc.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modal nuevo registro-->
+    <div class="modal fade" id="ModalNuevo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Riviera</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+
+                </div>
+                <div class="modal-body">
+                    <form id="form-nuevo">
+                        <div class="form-group">
+                            <label for="">Id</label>
+                            <input type="text" name="nuevo[]" class="form-control" maxlength="20" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">PREid</label>
+                            <input type="text" name="nuevo[]" class="form-control" maxlength="11" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Valor</label>
+                            <input type="number" name="nuevo[]" class="form-control" maxlength="11" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Fecha</label>
+                            <input type="date" name="nuevo[]" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Tipo</label>
+                            <input type="text" name="nuevo[]" class="form-control" maxlength="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Observacion</label>
+                            <textarea name="nuevo[]" class="form-control" required>
+
+                                    </textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btn-agregardatos">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modal Actualizar registro-->
+    <div class="modal fade" id="ModalActualizar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Actualizar</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+
+                </div>
+                <div class="modal-body">
+                    <form id="form-actualizar">
+                        <div class="form-group">
+                            <label for="">Id</label>
+                            <input type="text" id="idU" class="form-control" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="">PREid</label>
+                            <input type="text" id="preidU" class="form-control" maxlength="11">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Valor</label>
+                            <input type="number" id="valoridU" class="form-control" maxlength="">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Fecha</label>
+                            <input type="date" id="fechaidU" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Tipo</label>
+                            <input type="text" id="tipoidU" class="form-control" maxlength="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Observacion</label>
+                            <textarea id="observacionU" class="form-control"> </textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btn-actualizar"> Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!---->
+
+
+</body>
+
+</html>
